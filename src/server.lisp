@@ -1,5 +1,4 @@
-(ql:quickload :clack)
-(ql:quickload :ningle)
+(in-package :cryptobot)
 
 (defvar *app* (make-instance 'ningle:<app>))
 

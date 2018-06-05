@@ -1,17 +1,20 @@
 ;;;; -*- Mode: Lisp; Syntax: ANSI-Common-Lisp; Base: 10 -*-
-(defpackage #:cryptobot-asd
-    (:use #:cl #:asdf))
-
-(in-package :cryptobot-asd)
-
-(defsystem cryptobot
-    :name "cryptobot"
-    :version "0.0.0"
-    :maintainer "Asep Bagja Priandana"
-    :author "Asep Bagja Priandana"
-    :licence "MIT"
-    :description "A Cryptocurrency Bot"
-    :long-description "A bot to read cryptocurrency market price."
-    :serial t
-    :components ((:static-file "cryptobot.asd")
-                 (:module :src)))
+(asdf:defsystem #:cryptobot
+  :name "cryptobot"
+  :version "0.0.0"
+  :maintainer "Asep Bagja Priandana"
+  :author "Asep Bagja Priandana"
+  :licence "MIT"
+  :description "An FB Messenger Cryptocurrency Bot"
+  :long-description "A Facebook bot to read cryptocurrency market price."
+  :serial t
+  :depends-on (#:clack
+               #:ningle
+               #:drakma
+               #:cl-json)
+  :components ((:static-file "cryptobot.asd")
+               (:module :src
+                        :serial t
+                        :components
+                        ((:file "server")
+                         (:file "listing")))))

@@ -1,0 +1,2 @@
+(defpackage #:cryptobot
+  (:use #:cl))

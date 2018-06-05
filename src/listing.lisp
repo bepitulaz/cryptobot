@@ -1,5 +1,4 @@
-(ql:quickload :drakma)
-(ql:quickload :cl-json)
+(in-package :cryptobot)
 
 (setq drakma:*text-content-types*
     (cons '("application" . "json") drakma:*text-content-types*))
