@@ -12,7 +12,7 @@
                #:ningle
                #:drakma
                #:cl-json)
-  :components ((:static-file "cryptobot.asd")
+  :components ((:file "package")
                (:module :src
                         :serial t
                         :components
