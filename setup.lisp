@@ -1,7 +1,7 @@
 (in-package :cl-user)
 
 (require 'asdf)
-(load "~/quicklisp/setup.lisp")
+(load "~/.quicklisp/setup.lisp")
 
 (print ">>> Building system....")
 
