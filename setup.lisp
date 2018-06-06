@@ -1,5 +1,8 @@
 (in-package :cl-user)
 
+(require 'asdf)
+(load "~/quicklisp/setup.lisp")
+
 (print ">>> Building system....")
 
 (load "cryptobot.asd")
