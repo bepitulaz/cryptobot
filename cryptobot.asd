@@ -8,7 +8,8 @@
   :description "An FB Messenger Cryptocurrency Bot"
   :long-description "A Facebook bot to read cryptocurrency market price."
   :serial t
-  :depends-on (#:clack
+  :depends-on (#:hunchentoot
+               #:clack
                #:ningle
                #:drakma
                #:cl-json)
