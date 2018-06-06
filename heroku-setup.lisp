@@ -2,7 +2,7 @@
 
 (print ">>> Building system....")
 
-(load "cryptobot.asd")
+(load (merge-pathnames "cryptobot.asd" *build-dir*))
 
 (ql:quickload :cryptobot)
 

@@ -7,6 +7,9 @@
   (dolist (entry entries) (format t "~a~%" (cdr (caadar entry)))) ; do something with the message
   '(200 (:content-type "text/plain") ("EVENT_RECEIVED")))
 
+(setf (ningle:route *app* "/")
+  "This is Cryptobot")
+
 ;;; This is the webhook route to accept incoming messenger message.
 (setf (ningle:route *app* "/webhook" :method :POST)
   #'(lambda (params)
