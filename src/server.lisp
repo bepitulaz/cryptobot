@@ -2,6 +2,8 @@
 
 (defvar *app* (make-instance 'ningle:<app>))
 
+(defvar *server* nil)
+
 (defun parse-entry(entries)
   "This function will parse the incoming message from Facebook Page."
   (dolist (entry entries) (format t "~a~%" (cdr (caadar entry)))) ; do something with the message
@@ -37,4 +39,14 @@
             ;; send http 403, whenever the webhook is failed to verify
             '(403 (:content-type "text/plain") ("forbidden")))))))
 
-(clack:clackup *app*)
+(defun server-start ()
+  "Starting the application server."
+  (if *server*
+    (format t "Server already started")
+    (setf *server* (clack:clackup *app*))))
+
+(defun server-stop ()
+  "Stopping the application server."
+  (if *server*
+    (clack:stop *server*)
+    (format t "Server is not running")))
