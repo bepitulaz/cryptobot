@@ -49,7 +49,7 @@
   "Starting the application server with SSL support."
   (if *server*
     (format t "Server already started")
-    (setf *server* (clack:clackup *app* :port 443
+    (setf *server* (clack:clackup *app* :port 5000
                                         :ssl t
                                         :ssl-key-file "/home/ubuntu/ssl/cryptobot.tanibox.com.key"
                                         :ssl-cert-file "/home/ubuntu/ssl/cryptobot.tanibox.com.crt"))))
