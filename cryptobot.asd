@@ -11,10 +11,12 @@
   :depends-on (#:clack
                #:ningle
                #:drakma
-               #:cl-json)
+               #:cl-json
+               #:jsown)
   :components ((:file "package")
                (:module :src
                         :serial t
                         :components
                         ((:file "server")
-                         (:file "listing")))))
+                         (:file "listing")
+                         (:file "sendapi")))))

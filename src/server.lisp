@@ -6,7 +6,7 @@
 
 (defun parse-entry(entries)
   "This function will parse the incoming message from Facebook Page."
-  (dolist (entry entries) (format t "~a~%" (cdr (caadar entry)))) ; do something with the message
+  (dolist (entry entries) (format t "~a~%" entry)) ; do something with the message
   '(200 (:content-type "text/plain") ("EVENT_RECEIVED")))
 
 (setf (ningle:route *app* "/")

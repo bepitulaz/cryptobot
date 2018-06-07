@@ -1,4 +1,5 @@
 (defpackage #:cryptobot
-  (:use :cl :clack :ningle :drakma :cl-json)
+  (:use :cl :clack :ningle :drakma :cl-json :jsown)
   (:export :server-start
-           :server-stop))
+           :server-stop
+           :show-service))
