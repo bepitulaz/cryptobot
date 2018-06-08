@@ -4,9 +4,11 @@
 
 (defvar *server* nil)
 
-(defun parse-entry(entries)
-  "This function will parse the incoming message from Facebook Page."
-  (dolist (entry entries) (format t "~a~%" entry)) ; do something with the message
+;;; This function is a gate to process the incoming message from Facebook Page.
+(defun process-entry(entries)
+  (dolist (entry entries)
+    (cond
+      ((string= (nlp:get-entity entry) "greetings") (cryptobot:show-service "" ""))))
   '(200 (:content-type "text/plain") ("EVENT_RECEIVED")))
 
 (setf (ningle:route *app* "/")
@@ -19,7 +21,7 @@
             (entries (cdr (assoc "entry" params :test #'string=))))
         (if (string= object "page")
           ;; The event is coming from a page subscription
-          (parse-entry entries)
+          (process-entry entries)
           ;; Otherwise, return not found
           '(404 (:content-type "text/plain") ("Not found"))))))
 
