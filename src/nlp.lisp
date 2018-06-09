@@ -1,5 +1,7 @@
-(in-package :nlp)
+(in-package :cryptobot-nlp)
 
 ;;; Get the entity type of each message.
 (defun get-entity (entry)
-  (cdar (cadadr (cadadr (caadar entry)))))
+  (let* ((nlp (car (cdaadr entry)))
+         (entities (cadr nlp)))
+    (caadr entities)))

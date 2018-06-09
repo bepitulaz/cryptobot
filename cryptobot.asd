@@ -19,4 +19,5 @@
                         :components
                         ((:file "server")
                          (:file "listing")
+                         (:file "nlp")
                          (:file "sendapi")))))

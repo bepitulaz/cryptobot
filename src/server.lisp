@@ -4,11 +4,15 @@
 
 (defvar *server* nil)
 
-;;; This function is a gate to process the incoming message from Facebook Page.
+;;; This function is a gate to process the incoming webhook event from Facebook Page.
 (defun process-entry(entries)
   (dolist (entry entries)
-    (cond
-      ((string= (nlp:get-entity entry) "greetings") (cryptobot:show-service "" ""))))
+    (let ((messaging-payload (car entry)))
+      (cond
+        ((string= (caaadr messaging-payload) "message") (cryptobot-sendapi:send-message messaging-payload))
+        ((string= (caaadr messaging-payload) "read") (format t "EVENT: ~a" "it's read event"))
+        ((string= (caaadr messaging-payload) "delivery") (format t "EVENT: ~a" "it's delivery event"))
+        ((string= (caaadr messaging-payload) "referral") (format t "EVENT: ~a" "it's referral event")))))
   '(200 (:content-type "text/plain") ("EVENT_RECEIVED")))
 
 (setf (ningle:route *app* "/")

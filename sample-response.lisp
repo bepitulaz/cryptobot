@@ -14,3 +14,12 @@
    (sender (id . 1666237776792864))))
   (time . 1528383156911)
   (id . 605726583134566)))
+
+(defvar *sample-read-response*
+  '((messaging
+      ((read (seq . 0) (watermark . 1528460713866))
+      (timestamp . 1528460750799)
+      (recipient (id . "605726583134566"))
+      (sender (id . "1666237776792864"))))
+    (time . 1528460750815) (id . "605726583134566")))
+    
