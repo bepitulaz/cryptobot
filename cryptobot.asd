@@ -20,4 +20,5 @@
                         ((:file "server")
                          (:file "listing")
                          (:file "nlp")
+                         (:file "message")
                          (:file "sendapi")))))
