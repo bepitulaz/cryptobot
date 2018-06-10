@@ -10,7 +10,7 @@
     (let ((messaging-payload (car entry)))
       (cond
         ((string= (caaadr messaging-payload) "message") (cryptobot-sendapi:send-message messaging-payload))
-        ((string= (caaadr messaging-payload) "postback") (format t "EVENT: ~a" "it's a postback event"))
+        ((string= (caaadr messaging-payload) "postback") (cryptobot-sendapi:postback-reply messaging-payload))
         ((string= (caaadr messaging-payload) "read") (format t "EVENT: ~a" "it's a read event"))
         ((string= (caaadr messaging-payload) "delivery") (format t "EVENT: ~a" "it's a delivery event"))
         ((string= (caaadr messaging-payload) "referral") (format t "EVENT: ~a" "it's a referral event")))))
