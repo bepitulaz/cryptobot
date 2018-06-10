@@ -2,7 +2,7 @@
 
 Common Lisp Facebook messenger bot for Cryptocurrency information and news.
 
-# How to run it
+## How to run it
 
 I use GNU Screen to deploy the bot.
 
@@ -13,16 +13,16 @@ sbcl --load setup.lisp \
 --eval "(cryptobot-sendapi:get-started)"
 ```
 
-# Current features
+## Current features
 
 - Show the bot's services
 - Show top 4 cryptocurrencies price ticker
 
-# Roadmap
+## Roadmap
 
 - Search cryptocurrency by its ticker symbol
 - Aggregating news
 
-# License
+## License
 
 MIT
