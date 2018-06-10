@@ -13,7 +13,7 @@
                                                         ("subtitle" . "A bot for anything about cryptocurrency and blockchain world.")
                                                         ("buttons" . ((:obj 
                                                                         ("type" . "postback")
-                                                                        ("title" . "Check Price Ticker.")
+                                                                        ("title" . "Check Price Ticker")
                                                                         ("payload" . "BTN_PRICE_TICKER"))
                                                                       (:obj 
                                                                         ("type" . "web_url")
