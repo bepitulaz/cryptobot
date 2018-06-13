@@ -1,6 +1,6 @@
 # CryptoBot
 
-Facebook messenger bot for Cryptocurrency information and news. It uses Common Lisp.
+Facebook messenger bot for cryptocurrency information and news. It uses Common Lisp.
 
 ![screen 1](screenshots/screen-1.jpg) ![screen 2](screenshots/screen-2.jpg)
 
